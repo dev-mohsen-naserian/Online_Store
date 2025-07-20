@@ -3,9 +3,32 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35818.85 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrontEnd", "FrontEnd", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BackEnd", "BackEnd", "{BFD98D1B-55BA-4342-8E9E-62593509DC64}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Document", "Document", "{778C3AE4-FE28-49BE-9690-75D5F851E505}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{0F4C15F0-7D7E-4518-903C-D227A74C69A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStore.BlazorUI", "FrontEnd\OnlineStore.BlazorUI\OnlineStore.BlazorUI.csproj", "{8C3CC0DD-FFD2-4B40-947C-AC8E1CFDDF74}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C3CC0DD-FFD2-4B40-947C-AC8E1CFDDF74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C3CC0DD-FFD2-4B40-947C-AC8E1CFDDF74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C3CC0DD-FFD2-4B40-947C-AC8E1CFDDF74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C3CC0DD-FFD2-4B40-947C-AC8E1CFDDF74}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8C3CC0DD-FFD2-4B40-947C-AC8E1CFDDF74} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D75D1349-6230-4F0A-93C7-9DF334B64B59}
