@@ -1,0 +1,68 @@
+﻿
+.sidebar-menu {
+    list-style: none;
+    margin:0;
+    padding:0;
+    position:relative;
+}
+#sidebar-menu-main > li:first-child {
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 2.5px solid #ecf0f1; /*AVATAR is be*/
+}
+.logo {
+    color: var(--text-light-color);
+    font-size: 1rem;
+    font-weight: 600; /*AVATAR is be*/
+}
+.Item-nav {
+    padding: var(--padding-item-nav);
+}
+.Title-nav {
+    font-size: var(--fontsize-title-nav);
+    font-weight: var(--fontweidth-title-nav);
+    color: var(--text-light-color);
+    padding-left: var(--paddingleft-title-nav);
+    letter-spacing: var(--letter-space);
+}
+.arrow {
+    position: absolute;
+    left: 8.688rem;
+    transition: var(--transition);
+}
+.reversed {
+    transform: rotate(180deg);
+}
+.subMenueSettingShown {
+    display: block;
+    position: absolute;
+    height: auto;
+    width: 9rem;
+    background-color: #34495e;
+    border-radius: 10px;
+    left: 11rem;
+    top: 10.5rem;
+    list-style: none;
+    transition: var(--transition);
+}
+.subMenueSettinghidden {
+    display: none;
+    transition: var(--transition);
+}
+.sub-Item-nav {
+    padding: var(--padding-sub-item-nav);
+}
+.footer-sidebar-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+    #sidebar-menu-main > li:not(:first-child):hover, .sub-nav li:hover, .footer-sidebar-menu li:hover {
+        transition: var(--transition);
+        background-color: var(--sidebar-hover-color);
+        border-left: var(--border-left-hover);
+        color: #333;
+        border-bottom-left-radius: 5px;
+        border-top-left-radius: 5px;
+    }

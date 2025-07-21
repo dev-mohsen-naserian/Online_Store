@@ -1,0 +1,9 @@
+﻿.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    /*padding: 1rem;*/
+    border-radius: 10px;
+    background-color: var(--sidebar-background-color);
+}

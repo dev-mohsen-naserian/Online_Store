@@ -1,0 +1,5 @@
+﻿svg {
+    width: var(--widte-svg-arrow);
+    height: var(--height-svg-arrow);
+    color: var(--svg-color);
+}

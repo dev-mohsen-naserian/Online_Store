@@ -1,0 +1,18 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+html {
+    font-family: InterTight;
+}
+:root {
+    --text-light-color: #ecf0f1;
+    --sidebar-background-color: #34495e;
+    --sidebar-hover-color: #34495e;
+    --errpr-color: #e74c3c;
+    --success-color: #2ecc71;
+}
+.sidebar {
+    background-color: var(--sidebar-background-color);
+}

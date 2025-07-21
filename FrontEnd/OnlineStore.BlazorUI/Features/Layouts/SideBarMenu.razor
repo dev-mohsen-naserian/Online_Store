@@ -1,0 +1,43 @@
+﻿
+<ul class="sidebar-menu" id="sidebar-menu-main">
+	<li>
+		<a href="#"><span class="logo">Eshop.Com</span></a>
+	</li>
+	<li class="Item-nav">
+		<a href="#">
+			<UserSvg></UserSvg>
+			<span class="Title-nav">Profile</span>
+		</a>
+	</li>
+	<li class="Item-nav" @onclick=@(()=>isSububMenuShown = !isSububMenuShown)>
+		<span class="cusor-pointer">
+			<SettingSvg></SettingSvg>
+			<span class="Title-nav">Setting</span>
+			<span class="arrow @(isSububMenuShown? "":"reversed") ">
+				<ArrowSvg></ArrowSvg>
+			</span>
+		</span>
+		<ul class="sub-nav @(isSububMenuShown? "subMenueSettinghidden":"subMenueSettingShown")">
+			<li class="sub-Item-nav"><a href="#"><span class="Title-nav">Roles</span></a></li>
+		</ul>
+	</li>
+</ul>
+<ul class="footer-sidebar-menu">
+	    	<li class="Item-nav">
+		<a href="#">
+			<BackSvg></BackSvg>
+			<span class="Title-nav">Go Store</span>
+		</a>
+	</li>
+    	<li class="Item-nav">
+		<a href="#">
+			<LogOutSvg></LogOutSvg>
+			<span class="Title-nav">Log Out</span>
+		</a>
+	</li>
+</ul>
+
+@code {
+
+	private bool isSububMenuShown = true;
+}

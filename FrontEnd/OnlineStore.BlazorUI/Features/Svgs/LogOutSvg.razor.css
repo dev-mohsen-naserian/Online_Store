@@ -1,0 +1,5 @@
+﻿svg {
+    color: var(--svg-color);
+    width: var(--widte-svg-logout);
+    height: var(--height-svg-logout);
+}

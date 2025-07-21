@@ -1,4 +1,98 @@
-html, body {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*Fonts*/
+@font-face {
+    font-family: InterTight;
+    font-weight: 900;
+    font-style: normal;
+    src: url('../Fonts/InterTight-Black.woff')format('woff');
+}
+
+@font-face {
+    font-family: InterTight;
+    font-weight: 700;
+    font-style: normal;
+    src: url('../Fonts/InterTight-Bold.woff')format('woff');
+}
+
+@font-face {
+    font-family: InterTight;
+    font-weight: 600;
+    font-style: normal;
+    src: url('../Fonts/InterTight-SemiBold.woff')format('woff');
+}
+
+@font-face {
+    font-family: InterTight;
+    font-weight: 500;
+    font-style: normal;
+    src: url('../Fonts/InterTight-Medium.woff')format('woff');
+}
+
+@font-face {
+    font-family: InterTight;
+    font-weight: 400;
+    font-style: normal;
+    src: url('../Fonts/InterTight-Regular.woff')format('woff');
+}
+
+@font-face {
+    font-family: InterTight;
+    font-weight: 300;
+    font-style: normal;
+    src: url('../Fonts/InterTight-Light.woff')format('woff');
+}
+:root {
+    /*Colors*/
+    --text-light-color: #ecf0f1;
+    --sidebar-background-color: #34495e;
+    --sidebar-hover-color: #3e5870;
+    --errpr-color: #e74c3c;
+    --success-color: #2ecc71;
+    --svg-color: #ecf0f1;
+    /*Sizes SVG*/
+    --widte-svg-user: 1.8rem;
+    --height-svg-user: 1.8rem;
+    --widte-svg-setting: 1.8rem;
+    --height-svg-setting: 1.8rem;
+    --widte-svg-arrow: 1.8rem;
+    --height-svg-arrow: 1.8rem;
+    --widte-svg-logout: 1.8rem;
+    --height-svg-logout: 1.8rem;
+    --widte-svg-back: 1.8rem;
+    --height-svg-back: 1.8rem;
+    /*Sizes Tags*/
+    --padding-item-nav: 1rem;
+    --padding-sub-item-nav: 0.5rem;
+    --paddingleft-title-nav: 0.4rem;
+    --border-left-hover: 3px solid #ecf0f1;
+    /*Sizes Fonts*/
+    --fontsize-title-nav: 1rem;
+    --fontweidth-title-nav: 500;
+    --letter-space: 1px;
+    /*transition*/
+    --transition: all 0.5s ease-in-out;
+}
+
+html {
+    font-family: InterTight;
+}
+.sidebar {
+    
+}
+.cusor-pointer{
+    cursor:pointer;
+}
+
+
+
+
+
+
+/*html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
@@ -34,7 +128,7 @@ a, .btn-link {
 
 .validation-message {
     color: red;
-}
+}*/
 
 #blazor-error-ui {
     color-scheme: light only;
