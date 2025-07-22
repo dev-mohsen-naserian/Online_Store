@@ -7,3 +7,7 @@
     border-radius: 10px;
     background-color: var(--sidebar-background-color);
 }
+main {
+    background-color: var(--main-background-color);
+    border-radius: 10px;
+}

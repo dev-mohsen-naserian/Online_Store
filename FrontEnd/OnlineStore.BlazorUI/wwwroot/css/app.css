@@ -49,10 +49,16 @@
     /*Colors*/
     --text-light-color: #ecf0f1;
     --sidebar-background-color: #34495e;
+    --main-background-color: #f4faff;
+    --input-background-color: #f4faff;
+    --text-input-color: #3d3d3d;
+    --text-label-color: #5c6b73;
     --sidebar-hover-color: #3e5870;
     --errpr-color: #e74c3c;
     --success-color: #2ecc71;
     --svg-color: #ecf0f1;
+    --border-color-input-form: #d1d5db;
+    --hover-border-color-input-form: #9ca3af;
     /*Sizes SVG*/
     --widte-svg-user: 1.8rem;
     --height-svg-user: 1.8rem;
@@ -87,12 +93,53 @@ html {
     cursor:pointer;
 }
 
+.form {
+    display: flex;
+    padding: 25px;
+    border-bottom: 2px solid var(--sidebar-background-color);
+}
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color-input-form);
+    background-color: var(--input-background-color);
+    border-radius: 5px;
+    outline: none;
+    color: var(--text-input-color);
+    font-size: 1rem;
+    font-weight: 500;
+}
+    .input-box input:valid ~ span,
+    .input-box input:focus ~ span {
+        /* color: #3c5666;*/
 
-
-
-
-
-/*html, body {
+        transform: translateX(10px) translateY(-10px);
+        font-size: 0.65rem;
+        padding: 0 10px;
+/*        background: var(--main-background-color);
+        color: var(--sidebar-background-color);*/
+        letter-spacing: 0.2em;
+        color: var(--text-light-color);
+        background: var(--sidebar-background-color);
+        border-radius:7px;
+    }
+/*.input-box:nth-child(2) input:valid ~ span,
+.input-box:nth-child(2) input:focus ~ span {
+    background: var(--sidebar-background-color);
+    color: var(--text-light-color);
+}*/
+   /*.input-box input:valid,
+    .input-box input:focus{*/
+        /* color: #3c5666;*/
+        /*color: var(--sidebar-background-color);
+        transform: translateX(10px) translateY(-10px);
+        font-size: 0.65rem;
+        padding: 0 10px;
+        background: var(--main-background-color);
+        letter-spacing: 0.2em;
+    }*/
+    
+        /*html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
@@ -129,20 +176,19 @@ a, .btn-link {
 .validation-message {
     color: red;
 }*/
-
-#blazor-error-ui {
-    color-scheme: light only;
-    background: lightyellow;
-    bottom: 0;
-    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
-    box-sizing: border-box;
-    display: none;
-    left: 0;
-    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-}
+        #blazor-error-ui {
+        color-scheme: light only;
+        background: lightyellow;
+        bottom: 0;
+        box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+        box-sizing: border-box;
+        display: none;
+        left: 0;
+        padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+    }
 
     #blazor-error-ui .dismiss {
         cursor: pointer;

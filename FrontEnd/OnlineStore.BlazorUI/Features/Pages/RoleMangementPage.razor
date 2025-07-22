@@ -1,0 +1,23 @@
+﻿@layout AdminDashboardLayout
+@page "/role"
+
+    <EditForm class="form" Model=@person>
+        <div class="grid-container">
+           <div class="grid-x grid-padding-x">
+                <div class="cell medium-12 input-box">
+                    <InputText @bind-Value="person.Name" typeof="text" required="required" />
+                    <span class="title">Enter new role</span>
+                </div>
+            <button><AddSvg></AddSvg></button>
+            </div>
+        </div>
+    </EditForm>
+@code{
+    public class PersonModel
+    {
+        public string Name { get; set; }
+        public string Family { get; set; }
+    }
+    private PersonModel person = new();
+
+}
