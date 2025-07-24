@@ -3,7 +3,7 @@
     width:250px;
 
 }
-    .input-box span {
+.input-box span {
         position: absolute;
         left: 10px;
         padding: 10px;
@@ -12,7 +12,7 @@
         color: var(--border-color-input-form);
         text-transform: uppercase;
         transition: 0.5s;
-    }
+}
 button {
     background-color: var(--sidebar-background-color);
     color: var(--text-input-color);
@@ -28,4 +28,85 @@ button {
 }
 button:active{
     transform:translateY(-2px);
+}
+/*Table*/
+table{
+    width:100%;
+}
+table, th, td {
+    border-collapse: collapse;
+    padding: 1rem;
+    text-align: center;
+}
+.table{
+    margin:0 auto;
+    width:100%;
+    height:auto;
+    background-color:#fff5;
+    box-shadow:0 0.4rem 0.8rem #0005;
+    border-radius:0.8rem;
+    overflow:hidden;
+}
+.table_body{
+    width:100%;
+}
+.table_header {
+    width: 100%;
+    height: 10%;
+    background-color: #fff;
+    padding: 0.8rem 1rem;
+}
+thead th {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: var(--sidebar-background-color);
+    color: var( --text-light-color);
+}
+tbody tr:nth-child(even) {
+    background-color: #00000b;
+}
+
+tbody tr:hover {
+    background-color: #ffffff;
+}
+.del {
+    background-color: var(--errpr-color);
+    padding: 10px 10px;
+    border-radius: 10px;
+    transition: var( --transition);
+}
+.del:active{
+    transform:translateY(-2px);
+}
+.del span {
+       color: var(--text-light-color);
+       font-size:1rem;
+ }
+.edit {
+    background-color: #daa520;
+    padding:10px 10px;
+    border-radius:10px;
+    width:80px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+    .edit span {
+        color: var(--text-light-color);
+        font-size: 1rem;
+    }
+.input-box-edit {
+    position: relative;
+    width: 250px;
+}
+.input-box-edit span {
+    position: absolute;
+    left: 10px;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1rem;
+    color: var(--border-color-input-form);
+    text-transform: uppercase;
+    transition: 0.5s;
 }
