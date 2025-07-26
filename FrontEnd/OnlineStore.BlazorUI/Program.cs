@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using OnlineStore.BlazorUI;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
+
+builder.Services.AddBlazorBootstrap();
+
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 

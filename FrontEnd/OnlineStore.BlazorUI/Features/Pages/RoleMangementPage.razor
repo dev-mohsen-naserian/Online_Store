@@ -1,63 +1,160 @@
-﻿@layout AdminDashboardLayout
-@page "/role"
+﻿@using BlazorBootstrap;
 
-    <EditForm class="form" Model=@person>
-        <div class="grid-container">
-           <div class="grid-x grid-padding-x">
-                <div class="cell medium-12 input-box">
-                    <InputText @bind-Value="person.Name" typeof="text" required="required" />
-                    <span class="title">Enter new role</span>
-                </div>
-            <button><AddSvg></AddSvg></button>
-            </div>
-        </div>
-    </EditForm>
-    <main class="grid-container">
+
+@using OnlineStore.BlazorUI.SampleData
+@layout AdminDashboardLayout
+@page "/role"
+@using OnlineStore.BlazorUI.Models
+
+<EditForm class="form" Model="@roles">
+    <div class="grid-container">
         <div class="grid-x grid-padding-x">
-            <div class="cell medium-12">
-                <div class="table">
-                    <div class="table_body">
-                        <table>
-                            <thead>
+            <div class="cell medium-12 input-box" data-name="@roles.RoleId">
+                <InputText @bind-Value="roles.RoleName" typeof="text" required="required" />
+                <span class="title">Enter new role</span>
+            </div>
+            <button><AddSvg></AddSvg></button>
+        </div>
+    </div>
+</EditForm>
+
+<main class="grid-container ">
+    <div class="grid-x grid-padding-x">
+        <div class="cell medium-12">
+            <div class="table">
+                <div class="table_body">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Row</th>
+                                <th>Role</th>
+                                <th>Action Delete</th>
+                                <th>Action Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in ListRoles)
+                            {
                                 <tr>
-                                    <th>Row</th>
-                                    <th>Role</th>
-                                    <th>Actions</th>
-                                    <th>Actions</th
+                                    <td>@item.RoleId</td>
+                                    <td>@item.RoleName</td>
+                                    <td class="cell-del">
+
+                                        <a href="#" class="del">
+                                            <DelSvg></DelSvg>
+                                            <span>Delete</span>
+                                        </a>
+                                    </td>
+                                    <td class="cell-edit">
+                                        <a @onclick="() => OpenAndShowModal(item)" class="edit">
+                                            <EditSvg></EditSvg>
+                                            <span>Edit</span>
+                                        </a>
+                                    </td>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                    <td>1</td>
-                                    <td>User</td>
-                                    <td class="action">
-                                        <a href="#" class="del"><DelSvg></DelSvg><span>Delete</span></a>
-                                    </td>
-                                    <td>
-                                 <EditForm class="editFormeditForm" Model=@person>
-                                    <div class="grid-container">
-                                       <div class="grid-x grid-padding-x">
-                                            <div class="cell medium-6 input-box-edit">
-                                                <InputText @bind-Value="person.Name" typeof="text" required="required" />
-                                                <span class="title">Edit role</span>
-                                            </div>
-                                        <button class="edit"><EditSvg></EditSvg><span>Edit</span></button>
-                                        </div>
-                                    </div>
-                                </EditForm>
-                                    </td>
-                            </tbody>
-                        </table>
-                    </div>
+                            }
+
+                        </tbody>
+                    </table>
+                    @*    @if (showModal)
+                    { *@
+                    @*                         <EditForm Model="editRole" OnValidSubmit="Submit">
+                            <!-- Modal content here -->
+                        </EditForm> *@
+
+                    @*  } *@
                 </div>
             </div>
         </div>
-    </main>
-@code{
-    public class PersonModel
+    </div>
+</main>
+<Modal @ref="modal" Title="Modal title">
+    <BodyTemplate>
+        Modal body text goes here.
+    </BodyTemplate>
+    <FooterTemplate>
+        <Button Color="ButtonColor.Secondary" @onclick="OnHideModalClick">Close</Button>
+        <Button Color="ButtonColor.Primary">Save changes</Button>
+    </FooterTemplate>
+</Modal>
+
+@code {
+
+
+    private Modal modal = default!;
+
+    private Roles roles = new();
+    private List<Roles> ListRoles = MyRolesData.GetAllRoles();
+
+    private EditRole editRole { get; set; } = new();
+    private bool showModal = false;
+
+    private void Submit()
     {
-        public string Name { get; set; }
-        public string Family { get; set; }
+        // MyRolesData.Update(editRole.EditRoleId, editRole);
     }
-    private PersonModel person = new();
+
+    private void OpenModal(Roles item)
+    {
+        editRole.EditRoleId = item.RoleId;
+        editRole.EditRoleRoleName = item.RoleName;
+        showModal = true;
+    }
+
+    private async Task OpenAndShowModal(Roles item)
+    {
+        OpenModal(item);
+        await OnShowModalClick();
+    }
+
+    private async Task OnShowModalClick()
+    {
+        await modal.ShowAsync();
+    }
+
+    private async Task OnHideModalClick()
+    {
+        await modal.HideAsync();
+    }
 }
 
+
+@* @code {
+
+    private Modal modal = default!;
+
+    private async Task OnShowModalClick()
+    {
+        await modal.ShowAsync();
+    }
+
+    private async Task OnHideModalClick()
+    {
+        await modal.HideAsync();
+    }
+
+
+
+
+
+
+
+    private Roles roles = new();
+    private List<Roles> ListRoles = MyRolesData.GetAllRoles();
+    [SupplyParameterFromForm(FormName = "EditeRoleForm")]
+    private EditRole editRole { get; set; } = new();
+    private bool showModal = false;
+
+    private void Submit()
+    {
+        // MyRolesData.Update(editRole.EditRoleId, editRole);
+    }
+
+    private void OpenModal(Roles item)
+    {
+        editRole.EditRoleId = item.RoleId;
+        editRole.EditRoleRoleName = item.RoleName;
+        showModal = true;
+    }
+}
+ *@

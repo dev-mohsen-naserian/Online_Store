@@ -3,6 +3,9 @@
     width:250px;
 
 }
+.form{
+    position:fixed;
+}
 .input-box span {
         position: absolute;
         left: 10px;
@@ -38,14 +41,24 @@ table, th, td {
     padding: 1rem;
     text-align: center;
 }
-.table{
-    margin:0 auto;
-    width:100%;
-    height:auto;
-    background-color:#fff5;
-    box-shadow:0 0.4rem 0.8rem #0005;
-    border-radius:0.8rem;
-    overflow:hidden;
+.cell-edit {
+/*    display: flex;
+    justify-content: center;
+    align-items: center;*/
+    display:grid;
+    place-items:center;
+}
+.cell-del{
+    text-align:center;
+}
+.table {
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    background-color: #fff5;
+    box-shadow: 0 0.4rem 0.8rem #0005;
+    border-radius: 0.8rem;
+    overflow: hidden;
 }
 .table_body{
     width:100%;
@@ -64,7 +77,7 @@ thead th {
     color: var( --text-light-color);
 }
 tbody tr:nth-child(even) {
-    background-color: #00000b;
+    background-color: rgba(0,0,0,0.1);
 }
 
 tbody tr:hover {
@@ -75,6 +88,10 @@ tbody tr:hover {
     padding: 10px 10px;
     border-radius: 10px;
     transition: var( --transition);
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    width:90px;
 }
 .del:active{
     transform:translateY(-2px);
@@ -84,13 +101,17 @@ tbody tr:hover {
        font-size:1rem;
  }
 .edit {
-    background-color: #daa520;
-    padding:10px 10px;
-    border-radius:10px;
-    width:80px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+     background-color: #daa520;
+    padding: 10px 10px;
+    border-radius: 10px;
+    transition: var( --transition);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+}
+.edit:active {
+    transform: translateY(-6px);
 }
     .edit span {
         color: var(--text-light-color);
@@ -110,3 +131,4 @@ tbody tr:hover {
     text-transform: uppercase;
     transition: 0.5s;
 }
+

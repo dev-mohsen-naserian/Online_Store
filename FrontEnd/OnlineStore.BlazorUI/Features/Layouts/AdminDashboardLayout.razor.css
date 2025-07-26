@@ -10,4 +10,5 @@
 main {
     background-color: var(--main-background-color);
     border-radius: 10px;
+    overflow:hidden;
 }
